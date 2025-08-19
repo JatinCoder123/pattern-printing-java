@@ -6,7 +6,7 @@ public class Main {
     *****
     *****
      */
-    static void Square(int n) {
+    static void print1(int n) {
         for (int row = 1; row <= n; row++) {
             for (int col = 1; col <= n; col++) {
                 System.out.print("*");
@@ -21,7 +21,7 @@ public class Main {
     *****
     *****
      */
-    static void Rectangle(int m, int n) {
+    static void print2(int m, int n) {
         for (int row = 1; row <= m; row++) {
             for (int col = 1; col <= n; col++) {
                 System.out.print("*");
@@ -31,23 +31,6 @@ public class Main {
 
     }
 
-    /*
-       *
-      **
-     ***
-    ****
-     */
-    static void LeftTriangle(int n) {
-        for (int row = 1; row <= n; row++) {
-            for (int col = 1; col <= n; col++) {
-                if (col > n - row)
-                    System.out.print("*");
-                else
-                    System.out.print("_");
-            }
-            System.out.println();
-        }
-    }
 
     /*
     *
@@ -55,7 +38,7 @@ public class Main {
     ***
     *****
      */
-    static void RightTriangle(int n) {
+    static void print3(int n) {
         for (int row = 1; row <= n; row++) {
             for (int col = 1; col <= row; col++) {
                 System.out.print("*");
@@ -63,28 +46,7 @@ public class Main {
             System.out.println();
         }
     }
-
-    /*
-    *
-    **
-    ***
-    ****
-    *****
-    ****
-    ***
-    **
-    *
-    */
-    static void RightArrow(int n) {
-        for (int row = 1; row < 2 * n; row++) {
-            int c = row > n ? 2 * n - row : row;
-            for (int col = 1; col <= c; col++)
-                System.out.print("* ");
-            System.out.println();
-        }
-    }
-
-    /*
+        /*
      * 1
      * 12
      * 123
@@ -113,8 +75,7 @@ public class Main {
             System.out.println();
         }
     }
-
-    /*
+        /*
     
     ****
     ***
@@ -129,29 +90,7 @@ public class Main {
             System.out.println();
         }
     }
-
-    /*
-    
-    ****
-     ***
-      **
-       *
-     */
-    static void print11(int n) {
-        for (int row = 1; row <= n; row++) {
-            for (int col = 1; col <= n; col++) {
-                if (col > row - 1) {
-                    System.out.print("*");
-                } else {
-                    System.out.print(" ");
-                }
-
-            }
-            System.out.println();
-        }
-    }
-
-    /*
+  /*
      * 
      * 1234
      * 123
@@ -167,13 +106,77 @@ public class Main {
         }
     }
 
+
+
+    /*
+    *
+    **
+    ***
+    ****
+    *****
+    ****
+    ***
+    **
+    *
+    */
+    static void print8(int n) {
+        for (int row = 1; row < 2 * n; row++) {
+            int c = row > n ? 2 * n - row : row;
+            for (int col = 1; col <= c; col++)
+                System.out.print("* ");
+            System.out.println();
+        }
+    }
+
+
+
+
+     /*
+       *
+      **
+     ***
+    ****
+     */
+    static void print9(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (col > n - row)
+                    System.out.print("*");
+                else
+                    System.out.print("_");
+            }
+            System.out.println();
+        }
+    }
+    /*
+    
+    ****
+     ***
+      **
+       *
+     */
+    static void prin10(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= n; col++) {
+                if (col > row - 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+
+            }
+            System.out.println();
+        }
+    }
+
+  
     /*
         *
        ***
       *****
     
     */
-    static void print8(int n) {
+    static void print11(int n) {
         for (int row = 1; row <= n; row++) {
             for (int col = 1; col <= n + row - 1; col++) {
                 if (col > n - row) {
@@ -211,7 +214,7 @@ public class Main {
         *
     
     */
-    static void print9(int n) {
+    static void print13(int n) {
         for (int row = 1; row <= n; row++) {
             for (int col = 1; col <= 2 * n - row; col++) {
                 if (col < row)
@@ -232,7 +235,7 @@ public class Main {
            *
      
      */
-    static void print13(int n) {
+    static void print14(int n) {
         for (int row = 1; row <= n; row++) {
             for (int col = 1; col <= n; col++) {
                 if (col < row)
@@ -326,8 +329,34 @@ for(int row=1;row<2*n;row++){
             System.out.println();
         }
     }
+    /*
+         *
+        **
+       ***
+      ****
+       ***
+        **
+         * 
+     */
 
+     static void print17(int n){
+        for(int row=1;row<2*n;row++){
+            for(int col=1;col<=n;col++){
+                if(row>n){
+                    if(col>(row-n))System.out.print("*");
+                    else System.out.print(" ");
+
+                }
+                else{
+                    if(col<n-row+1)System.out.print(" ");
+                    else System.out.print("*");
+
+                }
+            }
+            System.out.println();
+        }
+     }
     public static void main(String[] args) {
-        print16(5);
+        print17(18);
     }
 }
