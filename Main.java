@@ -455,25 +455,85 @@ for(int row=1;row<2*n;row++){
      */
 
     static void print21(int n){
-        for(int row=1;row<=n;row++){
-            if(row==1){
-                for(int col=1;col<=2*n-row;col++)System.out.print("*");
-            }
-            else{
-                for(int col=1;col<=2*n-row;col++){
-                    if(col==row|| col==2*n-row)System.out.print("*");
+        for(int row=1;row<=n;row++) {
+            if (row == 1) {
+                for (int col = 1; col <= 2 * n - row; col++) System.out.print("*");
+            } else {
+                for (int col = 1; col <= 2 * n - row; col++) {
+                    if (col == row || col == 2 * n - row) System.out.print("*");
                     else System.out.print(" ");
 
-                } 
+                }
             }
-                 System.out.println();
+            System.out.println();
 
+        }
+    }
+    /*  *
+       * *
+      *   *
+     *     *
+     *     *
+      *   *
+       * *
+        *
+
+     */
+
+    static void print22(int n){
+        for(int row=1;row<=2*n;row++) {
+            if(row<=n){
+                for (int col = 1; col <=n+row-1 ; col++) {
+                    if (col == n-row+1 || col == n+row-1) System.out.print("*");
+                    else System.out.print(" ");
+                }
             }
-       
-           
-        
+            else{
+                int i=row-n;
+                for (int col = 1; col <= 2 * n -i; col++) {
+                    if (col == i || col == 2 * n - i) System.out.print("*");
+                    else System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+
+        }
+    }
+    /*
+            *
+           * *
+          *   *
+         *     *
+        *       *
+         *     *
+          *   *
+           * *
+            *
+
+     */
+
+    static void print23(int n){
+        for(int row=1;row<2*n;row++) {
+            if(row<=n){
+                for (int col = 1; col <=n+row-1 ; col++) {
+                    if (col == n-row+1 || col == n+row-1) System.out.print("*");
+                    else System.out.print(" ");
+                }
+            }
+            else{
+                int i=row-n+1;
+                for (int col = 1; col <= 2 * n -i; col++) {
+                    if (col == i || col == 2 * n - i) System.out.print("*");
+                    else System.out.print(" ");
+                }
+            }
+
+            System.out.println();
+
+        }
     }
      public static void main(String[] args) {
-        print21(5);
+        print23(5);
     }
 }
