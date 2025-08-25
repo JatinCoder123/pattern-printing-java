@@ -533,7 +533,83 @@ for(int row=1;row<2*n;row++){
 
         }
     }
+
+  /*
+         1
+        1 1
+       1 2 1
+      1 3 3 1
+     1 4 4 4 1
+  */
+
+    static void print24(int n){
+        for(int row=1;row<=n;row++){
+            for(int col=1;col<=n;col++){
+                if(col==n-row+1 ||col==n){
+                    System.out.print("1 ");
+                }
+                else if(col<=n-row) System.out.print(" ");
+                else System.out.print((row-1)+" ");
+            }
+            System.out.println();
+        }
+    }
+     /*
+         1
+        212
+       32123
+      4321234
+
+
+  */
+
+    static void print25(int n){
+        for(int row=1;row<=n;row++){
+            int i=row;
+            for(int col=1;col<=n+row-1;col++){
+                if(col<=n-row) System.out.print(" ");
+                else if(col<n)System.out.print(i--);
+                else if(col==n) System.out.print(i);
+                else System.out.print(++i);
+            }
+            System.out.println();
+        }
+    }
+     /*
+         1
+        212
+       32123
+      4321234
+       32123
+        212
+         1
+
+  */
+
+    static void print26(int n){
+        for(int row=1;row<=2*n-1;row++){
+            int c=row>n?2*n-(row-n)-1:n+row-1;
+            int i=row>n?2*n-row:row;
+            for(int col=1;col<=c;col++){
+                if(row>n){
+                    if(col<=row-n) System.out.print(" ");
+                    else if(col<n) System.out.print(i--);
+                    else if(col==n) System.out.print(i);
+                    else System.out.print(++i);
+
+                }
+                else{
+                    if(col<=n-row) System.out.print(" ");
+                    else if(col<n)System.out.print(i--);
+                    else if(col==n) System.out.print(i);
+                    else System.out.print(++i);
+                }
+
+            }
+            System.out.println();
+        }
+    }
      public static void main(String[] args) {
-        print23(5);
+        print26(3);
     }
 }
